@@ -1,0 +1,10 @@
+Helloooooooo
+This is a sample file
+to have multiple lines
+so that the program
+can read how many lines there are
+and also
+reverse lines (maybe words or letters, but whatever, same concept)
+and whatever else
+the next questions
+will require
