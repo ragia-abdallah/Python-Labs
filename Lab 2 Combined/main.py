@@ -174,7 +174,100 @@ print(my_new_list)
 
 
 #Q12
-print("\n12 - Write a function that takes a dictionary as input and returns a \
-new dictionary with the keys and values swapped (i.e., the keys \
-become the values and the values become the keys).")
+print("\n12 - Write a function that takes a dictionary as input and returns a new dictionary \
+with the keys and values swapped (i.e., the keys become the values and the values become the keys).")
 
+
+def redictionaty(original_dic):
+    original_keys = original_dic.keys()
+    new_values = []
+    new_keys = []
+    for key in original_keys:
+        new_values.append(key)
+        new_keys.append(original_dic.get(key))
+    new_dic = {}
+    for i in range(0,len(new_keys)):
+        new_dic[new_keys[i]] = new_values[i]
+    return new_dic
+
+
+dic = {
+    "hello": "stonehenge",
+    "this": "is",
+    "a": "sample",
+    "dic": "tionary"
+}
+
+re_dic = redictionaty(dic)
+print(re_dic)
+
+print("\n13 - Write a function that takes a list of numbers as input and returns \
+the largest and smallest numbers in the list.")
+
+
+def largest_and_smallest(nums):
+    max = nums[0]
+    min = nums[0]
+    for n in nums:
+        if n > max:
+            max = n
+        elif n < min:
+            min = n
+    max_and_min = {"max": max, "min": min}
+    return max_and_min
+
+
+my_numbers = [3, 6, 4352, -2414, 46]
+
+my_max_and_min = largest_and_smallest(my_numbers)
+
+print("The largest number is:",my_max_and_min["max"],", and the smallest is:",my_max_and_min["min"])
+
+print("\n14 - Write a function that takes a list of numbers as input and returns \
+a new list containing the squares of each number in the input list.")
+
+
+def squares(nums):
+    square_numbers = []
+    for n in nums:
+        sq = n * n
+        square_numbers.append(sq)
+    return square_numbers
+
+
+my_nums = [3, 6, 2, 8]
+
+my_squ_nums = squares(my_nums)
+
+print(my_squ_nums)
+
+print("\n15 - Write a function that takes an arbitrary number of lists as input using *args \
+and returns a new list that contains all the elements from all the input lists.")
+
+
+def make_a_list(*args):
+    new_list = []
+    for arg in args:
+        new_list.append(arg)
+    return new_list
+
+
+my_new_list =  make_a_list("hello", "these", "are", 5, "args")
+
+print(my_new_list)
+
+print("\n16 - Write a function that takes a string as input and an arbitrary number of keyword \
+arguments using **kwargs. The function should replace all instances of the keyword argument keys \
+in the input string with their corresponding values.")
+
+
+def string_word_replacer(str, **kwargs):
+    for key, value in kwargs.items():
+        str = str.replace(key, value)
+    return str
+
+
+original_str = "This is the original string. Will replace this word"
+print(original_str)
+copy = string_word_replacer(original_str, original="copy", Will = "We", replace="replaced", this="that")
+print(copy)
